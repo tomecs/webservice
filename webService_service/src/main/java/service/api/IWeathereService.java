@@ -7,6 +7,7 @@ import javax.jws.WebService;
  * @author: fengmenglei
  * @date: 2019/3/21
  */
+@WebService
 public interface IWeathereService {
 
     String query(String cityName);

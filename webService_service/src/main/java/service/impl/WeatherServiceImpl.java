@@ -9,11 +9,11 @@ import javax.jws.WebService;
  * @author: fengmenglei
  * @date: 2019/3/21
  */
-@WebService
+
 public class WeatherServiceImpl implements IWeathereService {
 
     @Override
     public String query(String cityName) {
-        return null;
+        return cityName+"你好";
     }
 }

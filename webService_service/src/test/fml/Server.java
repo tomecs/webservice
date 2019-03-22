@@ -1,6 +1,7 @@
 package fml;
 
 import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.interceptor.security.JAASLoginInterceptor;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 import org.apache.cxf.jaxws.handler.logical.LogicalHandlerInInterceptor;
@@ -26,8 +27,8 @@ public class Server {
         factory.setServiceBean(new WeatherServiceImpl());
 
         // 添加日志输入输出拦截器
-        factory.getInInterceptors().add(new JAASLoginInterceptor());
-        factory.getOutInterceptors().add(new JAASLoginInterceptor());
+        factory.getInInterceptors().add(new LoggingInInterceptor());
+        factory.getOutInterceptors().add(new LoggingOutInterceptor());
         // 发布服务
         factory.create();
         System.out.println("发布成功");
